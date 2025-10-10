@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="200dp"
         app:srcCompat="@drawable/firstbit_picture" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/inter_bold"
         android:text="Мы делаем бизнес Клиента сильнее и создаем возможности для успешного развития с помощью IT-технологий"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -35,11 +35,11 @@
         android:id="@+id/button_login"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="280dp"
         android:layout_gravity="center"
-        android:backgroundTint="#b33572"
+        android:backgroundTint="@color/magenta"
         android:text="Регистрация"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -49,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#b33572"
+        android:backgroundTint="@color/magenta"
         android:text="Уже есть аккаунт? Войти"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 

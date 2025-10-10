@@ -1,7 +1,6 @@
 package com.example.firstbit;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,11 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 /**
  * активность для аутентификации пользователя
@@ -33,13 +28,7 @@ public class AuthActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_auth);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         EditText userLogin = findViewById(R.id.user_login_auth);
         EditText userPassword = findViewById(R.id.user_password_auth);
@@ -83,7 +72,11 @@ public class AuthActivity extends AppCompatActivity {
                         Toast.makeText(AuthActivity.this, "Пользователь " + login + " авторизован", Toast.LENGTH_SHORT).show();
                         userLogin.getText().clear();
                         userPassword.getText().clear();
+
+                        Intent intent = new Intent(AuthActivity.this, HomeActivity.class);
+                        startActivity(intent);
                     }
+                    //либо неверно ввел либо не зарегистрирован
                     else {
                         Toast.makeText(AuthActivity.this, "Пользователь " + login + " НЕ авторизован", Toast.LENGTH_SHORT).show();
                         Toast.makeText(AuthActivity.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
